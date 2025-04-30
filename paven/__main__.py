@@ -4,7 +4,7 @@ from __future__ import annotations
 
 from pathlib import Path
 
-import typer
+import doctyper
 
 from paven.configuration import load_configuration
 from paven.sync import revert_sync, run_sync
@@ -25,6 +25,6 @@ def run_paven(directory: Path = Path(), revert: bool = False) -> None:
 
 
 if __name__ == "__main__":
-    app = typer.Typer(help=__doc__, add_completion=False, pretty_exceptions_enable=False)
+    app = doctyper.SlimTyper(help=__doc__)
     app.command()(run_paven)
     app()

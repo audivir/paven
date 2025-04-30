@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "paven"
 dynamic = ["version"]
-dependencies = ["eval_type_backport", "deprive", "msgspec[toml]"]
+dependencies = ["eval_type_backport", "doctyper", "deprive", "msgspec[toml]"]
 requires-python = ">=3.9"
 authors = [{ name = "Tim Hörmann", email = "pypi@audivir.de" }]
 description = "Partial vendoring for Python packages."
