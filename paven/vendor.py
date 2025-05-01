@@ -124,7 +124,7 @@ def reverse_rewrite(item: Path, namespace: str) -> None:
         raise NotImplementedError("Tabs are not supported in the codebase.")
 
     text = text.replace(f"from {namespace}.", "from ")
-    text = text.replace(f"from {namespace} ", "import ")
+    text = text.replace(f"from {namespace} ", "")
     text = text.replace(f"import {namespace}.", "import ")
 
     item.write_text(text)
@@ -210,7 +210,7 @@ def truncate_libs(config: Paven, vendored_libs: list[str]) -> None:
     for lib in vendored_libs:
         lib_path = config.destination / lib
         if lib not in requirements:
-            logger.warning("No requirements found for vendored library, removinb: %s", lib)
+            logger.warning("No requirements found for vendored library, removing: %s", lib)
             _remove_all([lib_path], protected=[])
             continue
         required = {x.removeprefix(f"{config.namespace}.") for x in requirements[lib]}

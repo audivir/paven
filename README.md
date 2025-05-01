@@ -16,7 +16,7 @@ requirements = "paven/_vendor/vendor.txt"
 namespace = "paven._vendor"
 
 [tool.paven.transformations]
-drop = ["*.dist-info", "*.egg-info"]
+drop = ["*.dist-info", "*.egg-info"] # should not be required
 ```
 
 # Usage
